@@ -1,11 +1,13 @@
-const ListGroup = (props) => {
-  const { items, onItemSelect, textProperty, valueProperty, selectedItem } =
-    props;
-
+const ListGroup = ({
+  items,
+  onItemSelect,
+  textProperty,
+  valueProperty,
+  selectedItem,
+}) => {
   return (
     <>
       <ul className="list-group">
-        {/* <li className="list-group-item active">All Genres</li> */}
         {items.map((genre) => (
           <li
             key={genre[valueProperty]}
