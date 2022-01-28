@@ -91,7 +91,7 @@ class Movies extends Component {
           </div>
           <div className="col">
             <div className="mb-3">
-              Showing{" "}
+              Showing &nbsp;
               <span className="badge bg-primary text-white">{totalCount} </span>
               &nbsp;movies in the database
             </div>
