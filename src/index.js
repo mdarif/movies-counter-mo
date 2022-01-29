@@ -15,12 +15,14 @@ import { Customers } from './components/customers'
 import { Rentals } from './components/rentals'
 import { NotFound } from './components/notFound'
 import { NavBar } from './components/navBar'
+import MovieForm from './components/movieForm'
 
 ReactDOM.render(
   <>
     <Router>
       <NavBar />
       <Routes>
+        <Route path='/movies/:id' element={<MovieForm />} />
         <Route path='/' element={<Navigate replace to='/movies' />} />
         <Route path='/movies' element={<Movies />} />
         <Route path='/customers' element={<Customers />} />
