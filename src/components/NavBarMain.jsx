@@ -32,7 +32,7 @@ export const NavBarMain = () => {
             <ul className="navbar-nav">
               <li className="nav-item">
                 <Link
-                  className="nav-link active"
+                  className="nav-link"
                   aria-current="page"
                   to="/movies"
                   style={({ isActive }) => (isActive ? activeStyle : undefined)}
