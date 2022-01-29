@@ -6,6 +6,7 @@ import { paginate } from "../utils/paginate";
 import ListGroup from "./common/listGroup";
 import Pagination from "./common/pagination";
 import MoviesTable from "./moviesTable";
+import { NavBarMain } from "./NavBarMain";
 
 class Movies extends Component {
   state = {
@@ -81,6 +82,7 @@ class Movies extends Component {
 
     return (
       <div className="container">
+        <NavBarMain />
         <div className="row pt-md-5">
           <div className="col-3">
             <ListGroup
