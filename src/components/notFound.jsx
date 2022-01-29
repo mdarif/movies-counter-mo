@@ -1,10 +1,9 @@
 import React from "react";
-import { NavBarMain } from "./NavBarMain";
+import { NavBarMain } from "./navBar";
 
 export const NotFound = () => {
   return (
     <div className="container">
-      <NavBarMain />
       <h1>Not Found</h1>
     </div>
   );

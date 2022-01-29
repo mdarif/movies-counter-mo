@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './App.css'
-import NavBar from './components/navbar'
 import './index.css'
 import Counters from './components/counters'
+import TotalCounter from './components/totalCounter'
 
 class App extends Component {
   state = {
@@ -63,7 +63,7 @@ class App extends Component {
 
     return (
       <>
-        <NavBar
+        <TotalCounter
           totalCounters={this.state.counters.filter(c => c.value > 0).length}
         />
         <main className='container'>

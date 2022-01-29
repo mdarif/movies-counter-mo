@@ -14,12 +14,12 @@ import {
 import { Customers } from './components/customers'
 import { Rentals } from './components/rentals'
 import { NotFound } from './components/notFound'
-import { NavBarMain } from './components/NavBarMain'
+import { NavBar } from './components/navBar'
 
 ReactDOM.render(
   <>
     <Router>
-      <NavBarMain />
+      <NavBar />
       <Routes>
         <Route path='/' element={<Navigate replace to='/movies' />} />
         <Route path='/movies' element={<Movies />} />
