@@ -58,6 +58,15 @@ export const NavBar = () => {
                   Rentals
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+                  to="/login"
+                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                >
+                  Login
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
