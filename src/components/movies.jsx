@@ -1,5 +1,6 @@
 import _ from "lodash";
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import { getGenres } from "../services/fakeGenreService";
 import { getMovies } from "../services/fakeMovieService";
 import { paginate } from "../utils/paginate";
@@ -90,6 +91,11 @@ class Movies extends Component {
             />
           </div>
           <div className="col">
+            <div className="mb-3">
+              <NavLink className="btn btn-primary" to="/movies/new">
+                New Movie
+              </NavLink>
+            </div>
             <div className="mb-3">
               Showing &nbsp;
               <span className="badge bg-primary text-white">{totalCount} </span>
