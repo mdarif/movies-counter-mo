@@ -1,9 +1,11 @@
 import React from "react";
 
-export const Rentals = () => {
+const Rentals = () => {
   return (
     <div className="container">
       <h1>Rentals</h1>
     </div>
   );
 };
+
+export default Rentals;

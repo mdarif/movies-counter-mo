@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+/* import React, { Component } from 'react'
 import './App.css'
 import './index.css'
 import Counters from './components/counters'
@@ -17,10 +17,6 @@ class App extends Component {
   constructor (props) {
     //Constructor is called once to initialize the state in the class
     super(props)
-    // this.state = {
-    //   posts: [],
-    //   comments: []
-    // }
     console.log('App - Constructor', this.props)
   }
 
@@ -76,6 +72,48 @@ class App extends Component {
           />
         </main>
       </>
+    )
+  }
+}
+
+export default App
+ */
+
+import React, { Component } from 'react'
+import { Route, Redirect, Switch } from 'react-router-dom'
+import NavBar from './components/navBar'
+import Movies from './components/movies'
+import MovieForm from './components/movieForm'
+import Customers from './components/customers'
+import Rentals from './components/rentals'
+import NotFound from './components/notFound'
+import LoginForm from './components/loginForm'
+import RegisterForm from './components/registerForm'
+import './App.css'
+
+class App extends Component {
+  state = {}
+
+  render () {
+    const { user } = this.state
+
+    return (
+      <React.Fragment>
+        <NavBar />
+        <main className='container'>
+          <Switch>
+            <Route path='/login' component={LoginForm} />
+            <Route path='/register' component={RegisterForm} />
+            <Route path='/movies/:id' component={MovieForm} />
+            <Route path='/movies' component={Movies} />
+            <Route path='/customers' component={Customers} />
+            <Route path='/rentals' component={Rentals} />
+            <Route path='/not-found' component={NotFound} />
+            <Redirect from='/' exact to='/movies' />
+            <Redirect to='/not-found' />
+          </Switch>
+        </main>
+      </React.Fragment>
     )
   }
 }

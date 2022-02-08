@@ -16,6 +16,7 @@ export default class Form extends Component {
 
     const errors = {};
     for (let item of error.details) errors[item.path[0]] = item.message;
+
     return errors;
   };
 
@@ -58,9 +59,12 @@ export default class Form extends Component {
 
   renderButton(label) {
     return (
-      <button disabled={this.validate()} className="btn btn-primary">
-        {label}
-      </button>
+      <>
+        {/* {this.validate()} */}
+        <button disabled={this.validate()} className="btn btn-primary">
+          {label}
+        </button>
+      </>
     );
   }
 
@@ -79,11 +83,18 @@ export default class Form extends Component {
     );
   }
 
-  renderSelect(name, label) {
-    const { data, errors, genres } = this.state;
+  renderSelect(name, label, options) {
+    const { data, errors } = this.state;
 
     return (
-      <Select label={label} name={name} value={data[name]} genres={genres} />
+      <Select
+        label={label}
+        name={name}
+        value={data[name]}
+        options={options}
+        onChange={this.handleChange}
+        error={errors[name]}
+      />
     );
   }
 }

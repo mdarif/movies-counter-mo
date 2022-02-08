@@ -1,6 +1,6 @@
 import _ from "lodash";
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getGenres } from "../services/fakeGenreService";
 import { getMovies } from "../services/fakeMovieService";
 import { paginate } from "../utils/paginate";
@@ -92,9 +92,13 @@ class Movies extends Component {
           </div>
           <div className="col">
             <div className="mb-3">
-              <NavLink className="btn btn-primary" to="/movies/new">
+              <Link
+                to="/movies/new"
+                className="btn btn-primary"
+                style={{ marginBottom: 20 }}
+              >
                 New Movie
-              </NavLink>
+              </Link>
             </div>
             <div className="mb-3">
               Showing &nbsp;

@@ -1,85 +1,58 @@
 import React from "react";
-import { NavLink as Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
-export const NavBar = () => {
-  let activeStyle = {
-    textDecoration: "underline",
-  };
-
+const NavBar = ({ user }) => {
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <div className="container-fluid">
-          <Link
-            className="navbar-brand"
-            to="/"
-            style={({ isActive }) => (isActive ? activeStyle : undefined)}
-          >
-            Vidly
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  aria-current="page"
-                  to="/movies"
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                >
-                  Movies
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  to="/customers"
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                >
-                  Customers
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  to="/rentals"
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                >
-                  Rentals
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  to="/login"
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                >
-                  Login
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  to="/register"
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                >
-                  Register
-                </Link>
-              </li>
-            </ul>
-          </div>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <Link className="navbar-brand" to="/">
+        Vidly
+      </Link>
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon" />
+      </button>
+      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div className="navbar-nav">
+          <NavLink className="nav-item nav-link" to="/movies">
+            Movies
+          </NavLink>
+          <NavLink className="nav-item nav-link" to="/customers">
+            Customers
+          </NavLink>
+          <NavLink className="nav-item nav-link" to="/rentals">
+            Rentals
+          </NavLink>
+          {!user && (
+            <React.Fragment>
+              <NavLink className="nav-item nav-link" to="/login">
+                Login
+              </NavLink>
+              <NavLink className="nav-item nav-link" to="/register">
+                Register
+              </NavLink>
+            </React.Fragment>
+          )}
+          {user && (
+            <React.Fragment>
+              <NavLink className="nav-item nav-link" to="/profile">
+                {user.name}
+              </NavLink>
+              <NavLink className="nav-item nav-link" to="/logout">
+                Logout
+              </NavLink>
+            </React.Fragment>
+          )}
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
 };
+
+export default NavBar;
