@@ -90,6 +90,8 @@ import NotFound from './components/notFound'
 import LoginForm from './components/loginForm'
 import RegisterForm from './components/registerForm'
 import './App.css'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 class App extends Component {
   state = {}
@@ -99,6 +101,7 @@ class App extends Component {
 
     return (
       <React.Fragment>
+        <ToastContainer />
         <NavBar />
         <main className='container'>
           <Switch>
