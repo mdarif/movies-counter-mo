@@ -6,6 +6,8 @@ const { apiUrl } = config
 const apiEndpoint = apiUrl + '/auth'
 const tokenKey = 'token'
 
+http.setJwt(getJwt())
+
 export async function login (email, password) {
   const { data: jwt } = await http.post(apiEndpoint, {
     // data is the jwt token
