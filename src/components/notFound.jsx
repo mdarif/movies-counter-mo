@@ -1,5 +1,4 @@
 import React from "react";
-import { NavBarMain } from "./navBar";
 
 const NotFound = () => {
   return (
