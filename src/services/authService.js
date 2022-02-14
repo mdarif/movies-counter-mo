@@ -31,11 +31,16 @@ export function getCurrentUser () {
   }
 }
 
+export function getJwt () {
+  return localStorage.getItem(tokenKey)
+}
+
 const auth = {
   login,
   logout,
   getCurrentUser,
-  loginWithJwt
+  loginWithJwt,
+  getJwt
 }
 
 export default auth
