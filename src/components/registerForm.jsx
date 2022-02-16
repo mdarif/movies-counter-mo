@@ -26,7 +26,7 @@ export default class RegisterForm extends Form {
         // Client did something wrong
         const errors = { ...this.state.errors };
         errors.username = ex.response.data;
-        this.setState({ errors }, () => console.log("errors", errors));
+        this.setState({ errors });
       }
     }
   };

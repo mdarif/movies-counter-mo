@@ -51,7 +51,6 @@ class MoviesTable extends Component {
 
   render() {
     const { movies, onSort, sortColumn, user } = this.props;
-    console.log("user", user);
 
     return (
       <Table
